@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import fr.unilim.iut.kebab.ingredients.Ingredient;
+import fr.unilim.iut.visitor.VisiteurRegime;
 
 public class Assiette implements Kebab {
 
@@ -17,6 +18,10 @@ public class Assiette implements Kebab {
 
 	public boolean isPescetarien() {
 		return true;
+	}
+	
+	public void accept(VisiteurRegime visiteurRegime){
+		visiteurRegime.visit(this);
 	}
 
 }
